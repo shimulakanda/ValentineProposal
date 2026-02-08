@@ -25,7 +25,8 @@ body{
 }
 
 h1{
-    font-size:3rem;
+    font-size:2.5rem;
+    animation:fadeIn 1.5s ease;
 }
 
 .buttons{
@@ -40,6 +41,10 @@ button{
     border-radius:10px;
     cursor:pointer;
     transition:0.3s;
+}
+
+button:hover{
+    transform:scale(1.1);
 }
 
 #yesBtn{
@@ -64,6 +69,18 @@ button{
     to{transform:translateY(-10vh);}
 }
 
+@keyframes fadeIn{
+    from{opacity:0; transform:scale(0.8);}
+    to{opacity:1; transform:scale(1);}
+}
+
+.bigLove{
+    font-size:3rem;
+    text-align:center;
+    margin-top:40vh;
+    animation:fadeIn 1s ease;
+}
+
 </style>
 </head>
 
@@ -71,8 +88,7 @@ button{
 
 <div class="container">
 
-<h1> Maisha Mariam Meem </h1>
- <h1> Will You Be My Valentine? ❤️</h1>  
+<h1>Maisha Mariam Meem, <br>Will you be my forever valentine? ❤️</h1>
 
 <div class="buttons">
 <button id="yesBtn">YES 💖</button>
@@ -96,8 +112,10 @@ noBtn.addEventListener("mouseover", () => {
 });
 
 yesBtn.addEventListener("click", () => {
+
     document.body.innerHTML =
-        "<h1 style='color:white;text-align:center;margin-top:40vh;'>YAYYYY ❤️🥰</h1>";
+        "<div class='bigLove'>I WILL LOVE YOU EVER AND FOREVER ❤️🥰</div>";
+
 });
 
 /* Floating hearts effect */
@@ -107,14 +125,14 @@ function createHeart(){
     heart.className = "heart";
     heart.innerHTML = "❤️";
     heart.style.left = Math.random()*100 + "vw";
-    heart.style.fontSize = Math.random()*20 + 15 + "px";
+    heart.style.fontSize = Math.random()*25 + 15 + "px";
 
     document.body.appendChild(heart);
 
     setTimeout(()=>{heart.remove();},5000);
 }
 
-setInterval(createHeart,300);
+setInterval(createHeart,200);
 
 </script>
 
